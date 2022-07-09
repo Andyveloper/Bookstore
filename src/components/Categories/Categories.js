@@ -1,8 +1,8 @@
 const Categories = () => (
-  <div>
+  <section>
     <h2>CATEGORIES</h2>
     <button type="submit">CHECK STATUS</button>
-  </div>
+  </section>
 );
 
 export default Categories;

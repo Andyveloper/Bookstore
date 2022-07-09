@@ -10,7 +10,7 @@ const Book = (props) => {
   } = props;
 
   return (
-    <div className="book-list-container">
+    <section className="book-list-container">
       <div className="book-list-info">
         <h2 className="book-list__book-title">{title || 'Title Goes Here'}</h2>
         <p className="book-list__book-author">{author || 'Author Goes Here'}</p>
@@ -31,7 +31,7 @@ const Book = (props) => {
         </div>
       </div>
 
-    </div>
+    </section>
   );
 };
 

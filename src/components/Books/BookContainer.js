@@ -17,7 +17,7 @@ const BookContainer = () => {
     setBooks([...books, newBook]);
   };
   return (
-    <div className="book-container">
+    <section className="book-container">
       {books.map((book) => (
         <Book
           key={book.id}
@@ -27,7 +27,7 @@ const BookContainer = () => {
         />
       ))}
       <InputNewBook addBookProps={AddBook} />
-    </div>
+    </section>
   );
 };
 
