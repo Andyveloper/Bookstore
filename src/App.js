@@ -1,11 +1,9 @@
 import React from 'react';
 import './assets/scss/App.scss';
+import { Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Categories from './components/Categories/Categories';
-import { Routes, Route } from 'react-router-dom';
 import BookContainer from './components/Books/BookContainer';
-
-
 
 function App() {
   return (
