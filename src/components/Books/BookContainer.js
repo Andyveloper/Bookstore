@@ -6,17 +6,26 @@ import InputNewBook from './InputNewBook';
 const BookContainer = () => {
   const [books, setBooks] = useState([]);
 
-  const AddBook = (title, author) => {
+  const AddBook = (title, author, chapter, percentage) => {
     const newBook = {
       id: uuidv4(),
       title,
       author,
+      chapter,
+      percentage,
     };
     setBooks([...books, newBook]);
   };
   return (
     <div className="book-container">
-      <Book />
+      {books.map((book) => (
+        <Book
+          key={book.id}
+          title={book.title}
+          author={book.author}
+          percentage={book.percentage}
+        />
+      ))}
       <InputNewBook addBookProps={AddBook} />
     </div>
   );
