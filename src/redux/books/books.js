@@ -1,35 +1,43 @@
-const ADD_BOOK = 'bookstore/books/ADD_BOOK';
-const REMOVE_BOOK = 'bookstore/books/REMOVE_BOOK';
+import { nanoid, createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  books: [],
+  books: [
+    {
+      id: nanoid(),
+      title: 'Eminence in Shadow',
+      author: 'Daisuke Aizawa',
+      category: 'Action',
+      chapter: 'Chapter 5',
+      percentage: 50,
+    },
+    {
+      id: nanoid(),
+      title: 'Jobless Reincarnation',
+      author: 'Rifujin na Magonote',
+      category: 'Comedy',
+      chapter: 'Chapter 12',
+      percentage: 65,
+    },
+  ],
 };
 
-const reducer = (state = initialState, action) => {
-  switch (action.type) {
-    case ADD_BOOK:
-      return {
-        ...state,
-        books: [...state.books, action.payload],
-      };
-    case REMOVE_BOOK:
-      return {
-        ...state,
-        books: state.books.filter((book) => book.id !== action.payload),
-      };
-    default:
-      return state;
-  }
-};
-
-export const addBook = (book) => ({
-  type: ADD_BOOK,
-  payload: book,
+const reducer = createSlice({
+  name: 'books',
+  initialState,
+  reducers: {
+    addBook: (state, action) => ({
+      ...state,
+      books: [...state.books, action.payload],
+    }),
+    deleteBook: (state, action) => ({
+      ...state,
+      books: state.books.filter((book) => book.id !== action.payload),
+    }),
+  },
+  extraReducer: (builder) => {
+    builder.addDefaultCase((state) => state);
+  },
 });
 
-export const deleteBook = (id) => ({
-  type: REMOVE_BOOK,
-  payload: id,
-});
-
+export const { addBook, deleteBook } = reducer.actions;
 export default reducer;

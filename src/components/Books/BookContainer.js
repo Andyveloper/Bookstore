@@ -1,34 +1,24 @@
-import { useState } from 'react';
-import { v4 as uuidv4 } from 'uuid';
+import { useSelector } from 'react-redux';
 import Book from './Book';
 import InputNewBook from './InputNewBook';
 
 const BookContainer = () => {
-  const [books, setBooks] = useState([]);
-
-  const AddBook = (title, author, chapter, percentage) => {
-    const newBook = {
-      id: uuidv4(),
-      title,
-      author,
-      chapter,
-      percentage,
-    };
-    setBooks([...books, newBook]);
-  };
+  const book = useSelector((state) => state.books.books);
   return (
     <section className="book-container">
-      {books.map((book) => (
+      {book.map((book) => (
         <Book
           key={book.id}
+          id={book.id}
           title={book.title}
           author={book.author}
+          chapter={book.chapter}
+          category={book.category}
           percentage={book.percentage}
         />
       ))}
-      <InputNewBook addBookProps={AddBook} />
+      <InputNewBook />
     </section>
   );
 };
-
 export default BookContainer;
