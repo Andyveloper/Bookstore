@@ -1,4 +1,5 @@
 import { useDispatch } from 'react-redux';
+// import { useState } from 'react';
 import { addBook } from '../../redux/books/books';
 import createBook from '../../redux/createBook';
 
@@ -14,6 +15,7 @@ const InputNewBook = () => {
     target.title.value = '';
     target.author.value = '';
   };
+
   return (
     <div className="add-new-book">
       <h2>Add New Book</h2>
