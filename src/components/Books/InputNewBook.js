@@ -1,6 +1,6 @@
 import { useDispatch } from 'react-redux';
-// import { useState } from 'react';
-import { addBook } from '../../redux/books/books';
+import React from 'react';
+import { uploadBookThunk } from '../../redux/books/books';
 import createBook from '../../redux/createBook';
 
 const InputNewBook = () => {
@@ -10,7 +10,8 @@ const InputNewBook = () => {
     const { target } = e;
     const title = target.title.value;
     const author = target.author.value;
-    dispatch(addBook(createBook(title, author)));
+    console.log(createBook(title, author));
+    dispatch(uploadBookThunk(createBook(title, author)));
     /* Cleaning the form */
     target.title.value = '';
     target.author.value = '';

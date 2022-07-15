@@ -1,12 +1,12 @@
 import { nanoid } from '@reduxjs/toolkit';
 
 const createBook = (title, author) => ({
-  id: nanoid(),
+  item_id: nanoid(),
   title,
   author,
   category: 'Undetermined',
-  chapter: 'Undetermined',
-  percentage: 0,
+  // chapter: 'Undetermined',
+  // percentage: 0,
 });
 
 export default createBook;
