@@ -27,14 +27,14 @@ const Book = (props) => {
             <li className="action-list__item"><button type="button">Edit</button></li>
           </ul>
         </div>
-        <div className="progress-bar">
-          <CircularProgressbar value={percentage} text={`${percentage}%`} />
-        </div>
-        <div className="current-progress">
-          <h2>CURRENT CHAPTER</h2>
-          <p>{chapter || 'Chapter 17'}</p>
-          <button type="submit">UPDATE PROGRESS</button>
-        </div>
+      </div>
+      <div className="progress-bar">
+        <CircularProgressbar value={percentage} text={`${percentage}%`} />
+      </div>
+      <div className="current-progress">
+        <h2>CURRENT CHAPTER</h2>
+        <p>{chapter || 'Chapter 17'}</p>
+        <button type="submit">UPDATE PROGRESS</button>
       </div>
 
     </section>

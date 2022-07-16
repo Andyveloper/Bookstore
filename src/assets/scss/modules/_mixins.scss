@@ -1,0 +1,11 @@
+$web-blue: #0290ff;
+$web-gray: #121212;
+$main-bg-color:#fafafa;
+
+
+@mixin flex-pos($direction, $justify) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: center;
+}
