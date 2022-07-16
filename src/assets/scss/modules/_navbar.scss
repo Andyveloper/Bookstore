@@ -1,0 +1,47 @@
+@import './mixins';
+
+.navbar {
+  @include flex-pos(row, flex-start);
+  @include montserrat(700, 1.2rem);
+
+  position: relative;
+  padding: 1rem 10%;
+  background-color: #fff;
+  border-bottom: 1px solid $border-color;
+
+  .logo {
+    margin-right: 1.5rem;
+    color: $web-blue;
+  }
+
+  &-nav {
+    & > &__items {
+      @include montserrat(400, 0.9rem);
+
+      display: inline-block;
+      padding: 0.4rem;
+
+      & > a {
+        color: $web-gray;
+        transition: all 0.3s ease-in-out;
+      }
+
+      & > a:hover {
+        color: lighten($web-gray, 50%);
+      }
+    }
+  }
+}
+
+.profile-icon {
+  margin-left: auto;
+
+  &-img {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    margin-right: 5%;
+    cursor: pointer;
+    border: #000 solid 1px;
+  }
+}
