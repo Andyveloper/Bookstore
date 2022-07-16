@@ -8,8 +8,8 @@ const BookContainer = () => {
     <section className="book-container">
       {book.map((book) => (
         <Book
-          key={book.id}
-          id={book.id}
+          key={book.item_id}
+          id={book.item_id}
           title={book.title}
           author={book.author}
           chapter={book.chapter}

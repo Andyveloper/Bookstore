@@ -5,8 +5,8 @@ const createBook = (title, author) => ({
   title,
   author,
   category: 'Undetermined',
-  // chapter: 'Undetermined',
-  // percentage: 0,
+  chapter: `Chapter ${Math.floor(Math.random() * 10)}`,
+  percentage: Math.floor(Math.random() * 100),
 });
 
 export default createBook;
