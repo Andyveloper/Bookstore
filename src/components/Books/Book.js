@@ -22,9 +22,9 @@ const Book = (props) => {
         <p className="book-list__book-author">{author || 'Author Goes Here'}</p>
         <div className="actions-container">
           <ul className="actions-list">
-            <li className="action-list__item"><button type="button">Comments</button></li>
-            <li className="action-list__item"><button type="button" onClick={() => dispatch(deleteBookThunk(id))}>Remove</button></li>
-            <li className="action-list__item"><button type="button">Edit</button></li>
+            <li className="action-list__item"><button type="button" className="book-list__button">Comments</button></li>
+            <li className="action-list__item"><button type="button" className="book-list__button" onClick={() => dispatch(deleteBookThunk(id))}>Remove</button></li>
+            <li className="action-list__item"><button type="button" className="book-list__button">Edit</button></li>
           </ul>
         </div>
       </div>

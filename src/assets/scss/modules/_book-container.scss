@@ -1,13 +1,48 @@
 .book-list-container {
+  background-color: #fff;
+  border: 1px solid $border-color;
+  margin: 1rem;
   
   @include flex-pos(row, space-between);
 
   .book-list-info {
+    padding: 2rem 0;
+    .book-list__book-category {
+      @include montserrat(700, 0.8rem);
+      @include transparentize($web-gray, 0.5);
+    }
+  }
 
+  .book-list__book-title {
+    @include roboto (700, 1.3rem);
+    padding: 0.1rem 0;
+  }
+
+  .book-list__book-author {
+    @include roboto(300, 0.8rem);
+    color: $secondary-web-blue;
+    padding: 0 0 1.5rem 0;
   }
   .actions-container {
     .actions-list{
       @include flex-pos(row, space-between);
+
+      width: fit-content;
     }
+  }
+}
+
+.book-list__button {
+  background: none;
+  border: none;
+  color: $web-blue;
+  transition: all 0.2s ease-in-out;
+  &:hover {
+    cursor: pointer;
+    @include transparentize($web-blue, 0.5);
+  }
+  &::after {
+    content: '|';
+    margin: 0 1rem;
   }
 }
