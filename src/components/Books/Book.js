@@ -1,7 +1,8 @@
 import { CircularProgressbar } from 'react-circular-progressbar';
 import { PropTypes } from 'prop-types';
 import { useDispatch } from 'react-redux';
-import { deleteBook } from '../../redux/books/books';
+import { deleteBookThunk } from '../../redux/apiConnection';
+// import { deleteBook } from '../../redux/books/books';
 
 const Book = (props) => {
   const dispatch = useDispatch();
@@ -23,7 +24,7 @@ const Book = (props) => {
         <div className="actions-container">
           <ul className="actions-list">
             <li className="action-list__item"><button type="button">Comments</button></li>
-            <li className="action-list__item"><button type="button" onClick={() => dispatch(deleteBook(id))}>Remove</button></li>
+            <li className="action-list__item"><button type="button" onClick={() => dispatch(deleteBookThunk(id))}>Remove</button></li>
             <li className="action-list__item"><button type="button">Edit</button></li>
           </ul>
         </div>
