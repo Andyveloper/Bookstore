@@ -55,27 +55,31 @@
   }
 }
 
-
 .current-progress {
   h2 {
     @include roboto(300, 0.8rem);
     @include transparentize($web-gray, 0.5);
   }
+
   p {
     @include roboto(300, 1rem);
-    color:$web-gray;
+
+    color: $web-gray;
     margin: 0.5rem 0 1.5rem 0;
     padding: 0.1rem 0;
   }
+
   button {
     @include roboto(300, 1rem);
-    color:#fff;
+
+    color: #fff;
     background: $web-blue;
     border-radius: 6px;
     width: 11rem;
     height: 2rem;
     border: none;
     transition: all 0.2s ease-in-out;
+
     &:hover {
       cursor: pointer;
       background-color: $web-blue;
