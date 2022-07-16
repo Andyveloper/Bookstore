@@ -1,6 +1,8 @@
 import React from 'react';
-import './assets/scss/App.scss';
 import { Routes, Route } from 'react-router-dom';
+
+import './assets/scss/App.scss';
+
 import Navbar from './components/Navbar';
 import Categories from './components/Categories/Categories';
 import BookContainer from './components/Books/BookContainer';

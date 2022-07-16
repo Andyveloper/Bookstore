@@ -1,34 +1,31 @@
-import { useState } from 'react';
-import { v4 as uuidv4 } from 'uuid';
+import { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import Book from './Book';
 import InputNewBook from './InputNewBook';
+import { getBooks } from '../../redux/apiConnection';
 
 const BookContainer = () => {
-  const [books, setBooks] = useState([]);
+  const dispatch = useDispatch();
 
-  const AddBook = (title, author, chapter, percentage) => {
-    const newBook = {
-      id: uuidv4(),
-      title,
-      author,
-      chapter,
-      percentage,
-    };
-    setBooks([...books, newBook]);
-  };
+  const { books } = useSelector((state) => state.books);
+  useEffect(() => {
+    dispatch(getBooks());
+  }, []);
   return (
     <section className="book-container">
-      {books.map((book) => (
+      {books.length ? books.map((book) => (
         <Book
-          key={book.id}
+          key={book.item_id}
+          id={book.item_id}
           title={book.title}
           author={book.author}
+          chapter={book.chapter}
+          category={book.category}
           percentage={book.percentage}
         />
-      ))}
-      <InputNewBook addBookProps={AddBook} />
+      )) : <div className="not-found">No books added</div>}
+      <InputNewBook />
     </section>
   );
 };
-
 export default BookContainer;
