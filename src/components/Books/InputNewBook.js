@@ -18,7 +18,7 @@ const InputNewBook = () => {
 
   return (
     <div className="add-new-book">
-      <h2>Add New Book</h2>
+      <h2>ADD NEW BOOK</h2>
       <form
         className="add-book"
         onSubmit={handleSubmit}

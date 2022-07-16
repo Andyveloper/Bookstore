@@ -1,0 +1,40 @@
+@import './mixins';
+
+.add-new-book {
+  padding: 2rem 5%;
+  border-top: 2px solid $border-color;
+  & > h2 {
+    @include montserrat(700, 1.2rem);
+    color: $warm-gray;
+    padding-bottom: 1.2rem;
+  }
+}
+
+.add-book {
+  @include flex-pos(row, space-between);
+  &__title {
+    marign-right: 2rem;
+    padding: 0.5rem;
+    width: 40%;
+  }
+  input[type="text"]::placeholder {
+    text-align: left;
+  }
+  button {
+    @include roboto(300, 1rem);
+
+    font-size: 0.8rem;
+    color: #fff;
+    background: $web-blue;
+    border-radius: 6px;
+    width: 11rem;
+    height: 2rem;
+    border: none;
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+      cursor: pointer;
+      background-color: $web-blue;
+  }
+  }
+}
