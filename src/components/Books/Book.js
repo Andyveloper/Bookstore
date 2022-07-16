@@ -2,7 +2,6 @@ import { CircularProgressbar } from 'react-circular-progressbar';
 import { PropTypes } from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { deleteBookThunk } from '../../redux/apiConnection';
-// import { deleteBook } from '../../redux/books/books';
 
 const Book = (props) => {
   const dispatch = useDispatch();

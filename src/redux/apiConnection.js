@@ -9,7 +9,6 @@ const createBookList = (book) => {
   const bookList = [];
   const key = Object.keys(book);
   key.forEach((item) => {
-    // console.log(item);
     bookList.push({
       item_id: item,
       title: book[item][0].title,
