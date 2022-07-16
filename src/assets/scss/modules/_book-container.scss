@@ -88,12 +88,17 @@
   }
 }
 
-.progress-bar {
-  &::after {
-    content: '';
-    width: 0.125rem;
-    height: 4.375rem;
-    margin: 1.125rem 3.688rem 0 4.938rem;
-    border: solid 1px #e8e8e8;
+.booklist-progress {
+  @include flex-pos(row, center);
+  &-bar {
+    padding: 6px;
+  }
+  &-text > .percentage {
+    @include montserrat(400, 2rem);
+    color: $web-gray;
+  }
+  &-text > .completed {
+    @include montserrat(400, 0.875rem);
+    @include transparentize($web-gray, 0.5);
   }
 }
