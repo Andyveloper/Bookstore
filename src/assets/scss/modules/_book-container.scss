@@ -72,6 +72,7 @@
   button {
     @include roboto(300, 1rem);
 
+    font-size: 0.8rem;
     color: #fff;
     background: $web-blue;
     border-radius: 6px;

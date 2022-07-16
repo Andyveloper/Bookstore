@@ -11,8 +11,10 @@ const Book = (props) => {
     author,
     category,
     chapter,
-    percentage,
+    percentage = 0,
   } = props;
+
+  const percentageValue = Math.floor(Math.random() * 100);
 
   return (
     <section className="book-list-container">
@@ -28,8 +30,19 @@ const Book = (props) => {
           </ul>
         </div>
       </div>
-      <div className="progress-bar">
-        <CircularProgressbar value={percentage} text={`${percentage}%`} />
+      <div className="booklist-progress">
+        <div className="booklist-progress-bar">
+          <CircularProgressbar value={percentageValue} />
+        </div>
+        <div className="booklist-progress-text">
+          <p className="percentage">
+            {percentage || percentageValue}
+            %
+            {' '}
+
+          </p>
+          <p className="completed">Completed</p>
+        </div>
       </div>
       <div className="current-progress">
         <h2>CURRENT CHAPTER</h2>
@@ -41,18 +54,16 @@ const Book = (props) => {
   );
 };
 
-Book.defaultProps = {
-  chapter: 'Not Specificated',
-  percentage: 0,
-};
-
 Book.propTypes = {
   author: PropTypes.string.isRequired,
   category: PropTypes.string.isRequired,
-  chapter: PropTypes.string,
+  chapter: PropTypes.string.isRequired,
   id: PropTypes.string.isRequired,
   percentage: PropTypes.number,
   title: PropTypes.string.isRequired,
+};
+Book.defaultProps = {
+  percentage: 0,
 };
 
 export default Book;
