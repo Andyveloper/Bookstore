@@ -2,11 +2,12 @@
   background-color: #fff;
   border: 1px solid $border-color;
   margin: 1rem;
-  
+
   @include flex-pos(row, space-between);
 
   .book-list-info {
     padding: 2rem 0;
+
     .book-list__book-category {
       @include montserrat(700, 0.8rem);
       @include transparentize($web-gray, 0.5);
@@ -15,16 +16,20 @@
 
   .book-list__book-title {
     @include roboto (700, 1.3rem);
+
     padding: 0.1rem 0;
+    width: 20rem;
   }
 
   .book-list__book-author {
     @include roboto(300, 0.8rem);
+
     color: $secondary-web-blue;
     padding: 0 0 1.5rem 0;
   }
+
   .actions-container {
-    .actions-list{
+    .actions-list {
       @include flex-pos(row, space-between);
 
       width: fit-content;
@@ -37,12 +42,53 @@
   border: none;
   color: $web-blue;
   transition: all 0.2s ease-in-out;
+
   &:hover {
     cursor: pointer;
+
     @include transparentize($web-blue, 0.5);
   }
+
   &::after {
     content: '|';
     margin: 0 1rem;
+  }
+}
+
+
+.current-progress {
+  h2 {
+    @include roboto(300, 0.8rem);
+    @include transparentize($web-gray, 0.5);
+  }
+  p {
+    @include roboto(300, 1rem);
+    color:$web-gray;
+    margin: 0.5rem 0 1.5rem 0;
+    padding: 0.1rem 0;
+  }
+  button {
+    @include roboto(300, 1rem);
+    color:#fff;
+    background: $web-blue;
+    border-radius: 6px;
+    width: 11rem;
+    height: 2rem;
+    border: none;
+    transition: all 0.2s ease-in-out;
+    &:hover {
+      cursor: pointer;
+      background-color: $web-blue;
+    }
+  }
+}
+
+.progress-bar {
+  &::after {
+    content: '';
+    width: 0.125rem;
+    height: 4.375rem;
+    margin: 1.125rem 3.688rem 0 4.938rem;
+    border: solid 1px #e8e8e8;
   }
 }
