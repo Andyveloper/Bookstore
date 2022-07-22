@@ -2,9 +2,9 @@
 
 - Bookstore CMS
 
-## Project Website (GitHub Pages)
+## Project Website (Netlify)
 
-- https://github.com/Zeraltz/Bookstore
+https://zeraltz-bookstore.netlify.app/
 
 ## Clone the Project
 
@@ -42,4 +42,4 @@ Microverse
 
 ## 📝 License
 
-This project is [GPL 3.0](/LICENSE) licensed.
+This project is [MIT](/LICENSE) licensed.
